@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="SiGenerator..0aafa36a-10c1-4161-98eb-9e41a9985278" Version="2.3" Language="en-US" Publisher="BBD" />
+        <DisplayName>Si Generator Extension</DisplayName>
+        <Description xml:space="preserve">Si generator tool for .NET FX and .NET Core</Description>
+    </Metadata>
+    <Installation InstalledByMsi="false">
+        <InstallationTarget Version="[14.0,16.0)" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[14.0,16.0)" Id="Microsoft.VisualStudio.Pro" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,]" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.Net.Component.4.5.TargetingPack" Version="[14.0,16.0)" DisplayName=".NET Framework 4.5 targeting pack" />
+    </Prerequisites>
+</PackageManifest>
