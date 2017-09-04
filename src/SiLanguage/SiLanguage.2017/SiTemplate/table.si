@@ -1,0 +1,22 @@
+///
+/// Name:$safeitemname$.si
+///
+DATABASE $Database$ FLAGS$Flags$
+PACKAGE $Package$
+OUTPUT $TableName$
+SERVER $Database$$Schema$
+
+TABLE $TableName$
+  Id						        SEQUENCE
+  
+  UserName  						CHAR(50)
+  TmStamp							TIMESTAMP 
+
+KEY PK_$TableName$ PRIMARY 
+  Id
+
+PROC Insert
+PROC Update
+PROC SelectOne
+PROC SelectAll
+

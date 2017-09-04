@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="SiLanguage.Navigation.Navigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="Gainsboro">
+        <ComboBox Name="NavBox"
+                  Width="400"
+                  Height="25"
+                  HorizontalAlignment="Right"
+                  Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}"
+                  ItemsSource="{Binding NavItemsLocal}"
+                  SelectedItem="{Binding SelectedNavItem}"
+                  Margin="1"
+                  Loaded="combobox_Loaded">
+
+            <ComboBox.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="White" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+            </ComboBox.Resources>
+
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="23"
+                          Width="385"
+                          HorizontalAlignment="Stretch">
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Viewbox RenderTransformOrigin="0.5,0.5"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Margin="0,0,0,-1">
+                            <Viewbox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="0.4" 
+                                                    ScaleY="0.4" />
+                                </TransformGroup>
+                            </Viewbox.RenderTransform>
+                            <Path Width="133.333" 
+                                  Height="133.333" 
+                                  Stretch="Uniform" 
+                                  Fill="Purple"
+                                  Data="F1 M 66.6667,1.52588e-005C 29.907,1.52588e-005 0,29.907 0,66.6667C 0,103.425 29.907,133.333 66.6667,133.333C 103.427,133.333 133.333,103.425 133.333,66.6667C 133.333,29.907 103.427,1.52588e-005 66.6667,1.52588e-005 Z M 72.0429,122.315L 72.0429,104.302L 61.2904,104.302L 61.2904,122.318C 34.7428,119.772 13.5612,98.5912 11.0176,72.043L 29.0332,72.043L 29.0332,61.2904L 11.0176,61.2904C 13.5625,34.7428 34.7428,13.5625 61.2904,11.0176L 61.2904,29.0319L 72.0429,29.0319L 72.0429,11.0176C 98.5912,13.5612 119.772,34.7416 122.315,61.2904L 104.302,61.2904L 104.302,72.043L 122.318,72.043C 119.772,98.5912 98.5912,119.772 72.0429,122.315 Z "/>
+                        </Viewbox>
+
+                        <TextBlock Grid.Column="1" 
+                                   Text="{Binding Name}"
+                                   VerticalAlignment="Center"/>
+                        
+                        <TextBlock Grid.Column="2"
+                                   VerticalAlignment="Center"
+                                   FontStyle="Italic"
+                                   FontSize="10"
+                                   Foreground="Gray"
+                                   Text="{Binding Line, StringFormat='Line {0}'}"/>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+            
+        </ComboBox>
+    </Grid>
+</UserControl>

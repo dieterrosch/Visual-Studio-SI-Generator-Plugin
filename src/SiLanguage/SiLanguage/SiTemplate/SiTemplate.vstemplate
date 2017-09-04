@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+  <Name>Si Template</Name>
+  <Description>Creates a Si template.</Description>
+  <Icon>SiTemplate.ico</Icon>
+  <TemplateID>bbc1a0f3-f78f-44b4-a530-2d5fc8a9f786</TemplateID>
+  <ProjectType>CSharp</ProjectType>
+  <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+  <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  <DefaultName>table.si</DefaultName>
+  <SortOrder>2</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.si" ReplaceParameters="true" CustomTool="SiFileGenerator">table.si</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>SiWizardForm, Version=1.0.0.4, Culture=neutral, PublicKeyToken=6f2dfc4f4ca1b5f0</Assembly>
+    <FullClassName>SiWizardForm.SiWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

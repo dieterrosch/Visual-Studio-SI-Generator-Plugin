@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="SiLanguage.vsix..bc0fb075-2409-49b5-ba2d-879aefb20d5f" Version="1.0" Language="en-US" Publisher="BBD" />
+        <DisplayName>Si Language Extension (MS SQL)</DisplayName>
+        <Description xml:space="preserve">Si syntax highlighter and intellisense customized for MS SQL</Description>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="SiLanguage" Path="|SiLanguage|" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="SiTemplate" d:TargetPath="|SiTemplate;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="SiWizardForm" Path="|SiWizardForm|" AssemblyName="|SiWizardForm;AssemblyName|" />
+    </Assets>
+</PackageManifest>
